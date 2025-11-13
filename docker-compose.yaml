@@ -1,0 +1,27 @@
+
+version: '3.8'
+
+services:
+
+    db:
+        image: mysql:8.0
+        container_name: my_sql
+        restart: unless_stopped
+        environment: 
+            - MYSQL_ROOT_PASSWORD=superbohaker_123
+            - MYSQL_DATABASE=test
+            - MYSQL_USER=student
+            - MYSQL_PASSWORD=student@@12345
+
+        ports: 
+            #3307 to port, na którym można się łączyć z innego komputera  można zmieniać jak już zajęty, natomiast 3306 udostępniony i nie można go dotykać 
+            - "3307:3306"
+
+        volumes:
+        
+            - databes_data:/var/lib/mysql
+            #poniżej jest mapowanie wrzuciłem bazę world.sql jako przykład jak bzaza ma inną nazwę trzeba zmienić na właściwą 
+            - ./world.sql:/docker-entrypoint-initdb.d/world.sql
+
+volumes:
+  databes_data:
