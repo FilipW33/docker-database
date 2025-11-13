@@ -1,45 +1,55 @@
-#Docker dla baz danych
+# Docker dla baz danych
 
-##Krok 1 
+### Krok 1 
 
 Upewnij się, że plik docker-compose.yaml oraz Twój plik .sql (np. world.sql) znajdują się w tym samym folderze.
 
-*Otwórz terminal (CMD, PowerShell lub Terminal) w tym folderze.
+* Otwórz terminal (CMD, PowerShell lub Terminal) w tym folderze.
 
-*Uruchom serwer w tle za pomocą komendy:
+* Uruchom serwer w tle za pomocą komendy:
 
-```docker-compose up -d
+```bash
+docker-compose up -d
+```
 
 
 Przy pierwszym uruchomieniu Docker pobierze obraz mysql:8.0 i automatycznie załaduje dane z pliku .sql. Może to potrwać kilka minut.
 
 
-##Krok 2
+## Krok 2
 
 Ważne jest IP urządzenia by się podłączyć zdalnie 
 
-```ipconfig - windows
-ifconfig / ip addr - linux 
+```bash
+ipconfig - windows
+ifconfig / ip addr - linux
+```
 
-##Krok 3
+## Krok 3
 
 Przykładowe podłączenie do bazy z innego komputera 
 
-```mysql -h 192.168.1.10 -P 3307 -u student -p
+```bash
+mysql -h host_IP -P 3307 -u student -p
+```
 
 Następnie zostaniesz poproszony o hasło 
 
-##Krok 4 
+## Krok 4 
 
 Aby zatrzymać serwer wystarczy wpisć 
 
-```docker-compose down
+```bash
+docker-compose down
+```
 
 dane zostaną zachowane w (databes_data)
 
 ewentualnie pełny restart z usunięciem volumenu (wszystkie dane zostaną wymazane)
 
-```docker-compose down -v
+```bash
+docker-compose down -v
+```
 
 !Uwaga co ze zmianą na inne dystrybucje np. PostgreSQL:
  MySQL używa portu 3306 a PostgreSQL 5432
