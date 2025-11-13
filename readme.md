@@ -1,6 +1,6 @@
 # Docker dla baz danych
 
-### Krok 1 
+## Krok 1 
 
 Upewnij się, że plik docker-compose.yaml oraz Twój plik .sql (np. world.sql) znajdują się w tym samym folderze.
 
