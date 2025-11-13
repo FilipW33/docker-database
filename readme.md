@@ -51,7 +51,7 @@ ewentualnie pełny restart z usunięciem volumenu (wszystkie dane zostaną wymaz
 docker-compose down -v
 ```
 
-!Uwaga co ze zmianą na inne dystrybucje np. PostgreSQL:
+!! Uwaga co ze zmianą na inne dystrybucje np. PostgreSQL:
  MySQL używa portu `3306` a PostgreSQL `5432`
-by zmienić obraz z MySQL wystarczyt zmienić image w `docker-compose.yaml` np. na postgres:15
+by zmienić obraz z MySQL wystarczy zmienić image w `docker-compose.yaml` np. na postgres:15
 oraz MySQL używa `/var/lib/mysql` a PostgreSQL `/var/lib/postgresql/data` - też to trzeba zmienić 
